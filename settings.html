@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 150px;
+    padding: 0;
+    background: url('images/terms.jpg') no-repeat center center fixed; 
+    background-size: cover; 
+    color: #393838;
+
+}
+
+.settings-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.terms-btn {
+    padding: 50px 40px;
+    font-size: 36px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.terms-btn:hover {
+    background-color: #0056b3;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content ul {
+    margin: 10px 0 0;
+    padding-left: 20px;
+}
+
+.close-btn {
+    font-size: 20px;
+    color: #333;
+    float: right;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+
+    </style>
+    <title>Settings Page</title>
+</head>
+<body>
+    <div class="settings-container">
+        <button id="termsButton" class="terms-btn">Terms and Conditions</button>
+    </div>
+
+    <div id="termsModal" class="modal hidden">
+        <div class="modal-content">
+            <span id="closeModal" class="close-btn">&times;</span>
+            <h2>Terms and Conditions</h2>
+            <p>
+                Welcome to Banana Shuffle! By using this game, you agree to the following terms:
+                <ul>
+                    <li>You will not use this game for illegal purposes.</li>
+                    <li>Your personal data will be handled according to our privacy policy.</li>
+                    <li>The developers hold no responsibility for any issues caused by third-party interference.</li>
+                </ul>
+            </p>
+            <p>For more details, contact support@bananashuffle.com.</p>
+        </div>
+    </div>
+
+    <script>
+            const termsButton = document.getElementById("termsButton");
+            const termsModal = document.getElementById("termsModal");
+            const closeModal = document.getElementById("closeModal");
+
+            termsButton.addEventListener("click", () => {
+                termsModal.classList.remove("hidden");
+                termsModal.style.display = "flex"; // 
+            });
+
+            closeModal.addEventListener("click", () => {
+                termsModal.classList.add("hidden");
+                termsModal.style.display = "none";
+            });
+
+            termsModal.addEventListener("click", (e) => {
+                if (e.target === termsModal) {
+                    termsModal.classList.add("hidden");
+                    termsModal.style.display = "none";
+                }
+            });
+
+    </script>
+</body>
+</html>

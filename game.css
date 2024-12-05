@@ -1,0 +1,91 @@
+.quiz-container {
+    text-align: center;
+    margin: 0 auto;
+}
+.question {
+    text-align: center;
+}
+#timer {
+    font-size: 44px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    float: right;
+    position: absolute;
+    top: 30px; 
+    right: 20px;
+}
+
+
+
+#submit {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 18px; 
+    margin-top: 15px;
+  }
+
+  #answer {
+    width: 20%;
+    padding: 10px; 
+    font-size: 18px; 
+    margin-top: 15px;
+}
+
+
+  body{
+    background-image: url('images/gamebg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;
+  }
+
+  #quitButton {
+    position: absolute;
+    top: 10px;
+    left: 20px; 
+    height: 100px;
+    
+}
+
+#score {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    background-color: #f0f0f0;
+    padding: 50px;
+    border-radius: 5px;
+    background-color: #a2bca3;
+    font-size: 40px;
+  }
+
+  #refreshButton{
+    position: absolute;
+    top: 120px;
+    left: 30px; 
+    height: 85px;
+
+  }
+
+ .alert {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  background-color: #f0f0f0;
+  padding: 50px;
+  border-radius: 5px;
+  background-color: #a2bca3;
+  font-size: 40px;
+ }

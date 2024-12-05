@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-side {
+    width: 50%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.left-side .logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.left-side .logo img {
+    width: 150px;
+}
+
+.left-side h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.left-side p {
+    text-align: center;
+    max-width: 400px;
+    margin-bottom: 30px;
+}
+
+.left-side form {
+    width: 100%;
+    max-width: 400px;
+}
+
+.left-side input[type="email"],
+.left-side input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+
+.left-side button {
+    width: 100%;
+    padding: 10px;
+    margin: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.left-side a {
+    color: #333;
+    text-decoration: none;
+}
+
+.left-side p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.right-side {
+    width: 50%;
+    background-image: url('images/index.png');
+    background-size: cover;
+}

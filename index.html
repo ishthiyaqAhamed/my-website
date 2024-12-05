@@ -3,9 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Banana Shuffle Portal</title>
+    <link rel="stylesheet" href="indexstyle.css">
 </head>
 <body>
-    <h1>Hello</h1>
+    <div class="container">
+        <div class="left-side">
+            <h1>Banana Shuffle</h1>
+            <p>Thank you for getting back, please login First to your account!!</p>
+            <p>If you are not registered then Signup First</p>
+            <form>
+                <button type="button" id="login-btn">LOGIN</button>
+                <button type="button" id="signup-btn">SIGNUP</button>
+                <button type="button" id="setting-btn">SETTINGS</button>
+            </form>
+        </div>
+        <div class="right-side">
+            <img src="images/index.png" width="100%" height="100%" alt="Tropical Leaves">
+        </div>
+    </div>
+    <script>
+
+async function fetchBananaAPI(out = 'json', base64 = 'no') {
+            const url = `http://marcconrad.com/uob/banana/api.php?out=${out}&base64=${base64}`;
+            
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                
+                if (out === 'json') {
+                    const data = await response.json();
+                    console.log('JSON Response:', data);
+
+                    const imageElement = document.getElementById("banana-image");
+                    imageElement.src = data.question;
+
+                    const solution = data.solution;
+                    console.log('Solution:', solution);
+                } else if (out === 'csv') {
+                    const text = await response.text();
+                    console.log('CSV Response:', text);
+
+                    const [question, solution] = text.split(',');
+                    console.log('Question (Image URL):', question);
+                    console.log('Solution:', solution);
+
+                    const imageElement = document.getElementById("banana-image");
+                    imageElement.src = question;
+                }
+            } catch (error) {
+                console.error('Error fetching API:', error);
+            }
+        }
+
+        window.onload = () => {
+            fetchBananaAPI('json', 'no'); 
+        };
+
+        document.getElementById("login-btn").onclick = function() {
+            location.href = "login.html";
+        };
+        document.getElementById("signup-btn").onclick = function() {
+            location.href = "register.html";
+        };
+        document.getElementById("setting-btn").onclick = function() {
+            location.href = "settings.html";
+        };
+    </script>
 </body>
 </html>

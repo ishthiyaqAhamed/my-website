@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="registerstyle.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-side">
+      <img src="images/register.jpg" width="100%" alt="Image">
+    </div>
+    <div class="right-side">
+      <h1>Banana Shuffle</h1>
+      <h2>SignUp</h2>
+      <form action="registerdb.php" method="POST">
+  <input type="text" name="username" placeholder="Username" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <input type="password" id="password" name="password" placeholder="Password" required>
+  <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm Password" required>
+  <div class="checkbox">
+    <input type="checkbox" id="show-pw">
+    <label for="show-pw">Show Password</label>
+  </div>
+  <button type="submit">Register</button><br>
+  <a href="login.php">Already have an account? Click here to login</a>
+</form>
+
+    </div>
+  </div>
+  <script>
+      
+      const showPasswordCheckbox = document.getElementById('show-pw');
+      const passwordField = document.getElementById('password');
+      const confirmPasswordField = document.getElementById('confirm-password');
+
+      
+      showPasswordCheckbox.addEventListener('change', function () {
+
+        if (this.checked) {
+              passwordField.type = 'text'; 
+              confirmPasswordField.type = 'text'; 
+          } else {
+              passwordField.type = 'password'; 
+              confirmPasswordField.type = 'password'; 
+          }
+      });
+  </script>
+</body>
+</html>
